@@ -9,14 +9,17 @@ The aim of the project is to retrieve tick sighting data from the Elanco API, pr
 ## What the application does
 
 ### Getting data from the API
+
 - Connects to the Elanco API using Spring `RestClient`.
 - Retrieves tick sighting records when the application starts.
 - Retries requests if there are temporary server or connection problems, using an increasing delay between attempts.
 
 ### Processing the data
+
 Before saving records, the application checks that the data is valid.
 
 It checks for:
+
 - Missing IDs.
 - Missing or invalid dates.
 - Missing locations.
@@ -29,6 +32,7 @@ Valid records are saved to the sightings table. Records that cannot be processed
 ### Searching for sightings
 
 The application allows sightings to be searched using:
+
 - Location.
 - A start and end date.
 - A combination of location and date range.
@@ -81,13 +85,13 @@ You need Java 17 or later and an internet connection to access the Elanco API.
 First, clone the repository:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/akdenizcemal/ticktrackr.git
 ```
 
 Move into the project directory:
 
 ```bash
-cd tickrackr
+cd ticktrackr
 ```
 
 Run the application:
@@ -153,6 +157,7 @@ To run the tests, use:
 ```
 
 The tests currently cover:
+
 - Loading the Spring Boot application context.
 - Saving valid records.
 - Rejecting records with missing IDs.
